@@ -1,0 +1,13 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{F7E90DEA-4380-6C2C-C47F-15A9B9E7ECD4}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "DC_Thomson_Media",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}

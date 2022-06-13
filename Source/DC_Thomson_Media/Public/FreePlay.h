@@ -13,7 +13,7 @@ UCLASS()
 class DC_THOMSON_MEDIA_API UFreePlay : public UUserWidget
 {
 	GENERATED_BODY()
-		UPROPERTY(meta = (BindWidget))
+	UPROPERTY(meta = (BindWidget))
 		class UTextBlock* title;
 	UPROPERTY(meta = (BindWidget))
 		class UButton* RLGLButton;

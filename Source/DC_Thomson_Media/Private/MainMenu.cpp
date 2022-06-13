@@ -11,6 +11,7 @@ void UMainMenu::NativeConstruct()
 	Super::NativeConstruct();
 
 	start->OnClicked.AddUniqueDynamic(this, &UMainMenu::OnStartClicked);
+	freePlay->OnClicked.AddUniqueDynamic(this, &UMainMenu::OnFreePlayClicked);
 
 	title->SetText(FText::FromString("Main Menu"));
 	startText->SetText(FText::FromString("Start"));
@@ -22,4 +23,9 @@ void UMainMenu::NativeConstruct()
 void UMainMenu::OnStartClicked()
 {
 	UGameplayStatics::OpenLevel(GetWorld(), "RedLightMap");
+}
+
+void UMainMenu::OnFreePlayClicked()
+{
+	UGameplayStatics::OpenLevel(GetWorld(), "FreePlay");
 }

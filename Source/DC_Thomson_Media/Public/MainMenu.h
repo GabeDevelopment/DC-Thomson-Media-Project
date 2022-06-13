@@ -36,6 +36,8 @@ protected:
 		class UTextBlock* exitText;
 	UFUNCTION()
 		void OnStartClicked();
+	UFUNCTION()
+		void OnFreePlayClicked();
 
 	void NativeConstruct() override;
 };

@@ -13,6 +13,7 @@ UCLASS()
 class DC_THOMSON_MEDIA_API UPlayerSelect : public UUserWidget
 {
 	GENERATED_BODY()
+protected:
 	UPROPERTY(meta = (BindWidget))
 		class UTextBlock* title;
 	UPROPERTY(meta = (BindWidget))
@@ -28,29 +29,31 @@ class DC_THOMSON_MEDIA_API UPlayerSelect : public UUserWidget
 	UPROPERTY(meta = (BindWidget))
 		class UButton* sixPlayerButton;
 	UPROPERTY(meta = (BindWidget))
-	class UTextBlock* onePlayerText;
+		class UTextBlock* onePlayerText;
 	UPROPERTY(meta = (BindWidget))
-	class UTextBlock* twoPlayerText;
+		class UTextBlock* twoPlayerText;
 	UPROPERTY(meta = (BindWidget))
-	class UTextBlock* threePlayerText;
+		class UTextBlock* threePlayerText;
 	UPROPERTY(meta = (BindWidget))
-	class UTextBlock* fourPlayerText;
+		class UTextBlock* fourPlayerText;
 	UPROPERTY(meta = (BindWidget))
-	class UTextBlock* fivePlayerText;
+		class UTextBlock* fivePlayerText;
 	UPROPERTY(meta = (BindWidget))
-	class UTextBlock* sixPlayerText;
-	//UFUNCTION()
-	//	void onePlayerClicked();
-	//UFUNCTION()
-	//	void twoPlayerClicked();
-	//UFUNCTION()
-	//	void threePlayerClicked();
-	//UFUNCTION()
-	//	void fourPlayerClicked();
-	//UFUNCTION()
-	//	void fivePlayerClicked();
-	//UFUNCTION()
-	//	void sixPlayerClicked();
+		class UTextBlock* sixPlayerText;
+	UPROPERTY(meta = (BindWidget))
+		class UEditableTextBox* inputText;
+	UFUNCTION()
+		void onePlayerClicked();
+	UFUNCTION()
+		void twoPlayerClicked();
+	UFUNCTION()
+		void threePlayerClicked();
+	UFUNCTION()
+		void fourPlayerClicked();
+	UFUNCTION()
+		void fivePlayerClicked();
+	UFUNCTION()
+		void sixPlayerClicked();
 
 	void NativeConstruct() override;
 };

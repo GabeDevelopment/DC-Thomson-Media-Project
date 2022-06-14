@@ -34,9 +34,7 @@ void UPlayerSelect::onePlayerClicked()
 	FText name;
 	for (int i = 0; i < playerCount; i++)
 	{
-		inputText->SetIsEnabled(true);
-		name = inputText->GetText();
-		UE_LOG(LogTemp, Warning, TEXT("I just started running"));
+
 	}
 }
 

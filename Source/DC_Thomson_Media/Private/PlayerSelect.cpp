@@ -67,6 +67,27 @@ void UPlayerSelect::assignPlayers(int playerCount)
 {
 	for (int i = 0; i < playerCount; i++)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Player"));
+		UE_LOG(LogTemp, Warning, TEXT("Player %i"), i);
+	}
+	switch (playerCount)
+	{
+	case 1:
+		UE_LOG(LogTemp, Warning, TEXT("One Player"));
+		break;
+	case 2:
+		UE_LOG(LogTemp, Warning, TEXT("Two Players"));
+		break;
+	case 3:
+		UE_LOG(LogTemp, Warning, TEXT("Three Players"));
+		break;
+	case 4:
+		UE_LOG(LogTemp, Warning, TEXT("Four Players"));
+		break;
+	case 5:
+		UE_LOG(LogTemp, Warning, TEXT("Five Players"));
+		break;
+	case 6:
+		UE_LOG(LogTemp, Warning, TEXT("Six Players"));
+		break;
 	}
 }

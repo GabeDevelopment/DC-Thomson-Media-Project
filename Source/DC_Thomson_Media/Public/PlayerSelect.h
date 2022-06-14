@@ -54,6 +54,8 @@ protected:
 		void fivePlayerClicked();
 	UFUNCTION()
 		void sixPlayerClicked();
+	UFUNCTION()
+		void assignPlayers(int playerCount);
 
 	void NativeConstruct() override;
 };

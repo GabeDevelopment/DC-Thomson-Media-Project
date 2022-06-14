@@ -5,11 +5,11 @@
 #include <Components/Button.h>
 #include <Components/TextBlock.h>
 #include <Components/EditableTextBox.h>
+#include <iostream>
 void UPlayerSelect::NativeConstruct()
 {
 	Super::NativeConstruct();
-
-	inputText->SetIsEnabled(false);
+	UE_LOG(LogTemp, Warning, TEXT("Player"));
 
 	onePlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::onePlayerClicked);
 	twoPlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::twoPlayerClicked);
@@ -30,55 +30,43 @@ void UPlayerSelect::NativeConstruct()
 void UPlayerSelect::onePlayerClicked()
 {
 	int playerCount = 1;
-	TArray<FText> players;
-	FText name;
-	for (int i = 0; i < playerCount; i++)
-	{
-
-	}
+	assignPlayers(playerCount);
 }
 
 void UPlayerSelect::twoPlayerClicked()
 {
-	int playerCount = 1;
-	for (int i = 0; i < playerCount; i++)
-	{
-
-	}
+	int playerCount = 2;
+	assignPlayers(playerCount);
 }
 
 void UPlayerSelect::threePlayerClicked()
 {
-	int playerCount = 1;
-	for (int i = 0; i < playerCount; i++)
-	{
-
-	}
+	int playerCount = 3;
+	assignPlayers(playerCount);
 }
 
 void UPlayerSelect::fourPlayerClicked()
 {
-	int playerCount = 1;
-	for (int i = 0; i < playerCount; i++)
-	{
-
-	}
+	int playerCount = 4;
+	assignPlayers(playerCount);
 }
 
 void UPlayerSelect::fivePlayerClicked()
 {
-	int playerCount = 1;
-	for (int i = 0; i < playerCount; i++)
-	{
-
-	}
+	int playerCount = 5;
+	assignPlayers(playerCount);
 }
 
 void UPlayerSelect::sixPlayerClicked()
 {
-	int playerCount = 1;
+	int playerCount = 6;
+	assignPlayers(playerCount);
+}
+
+void UPlayerSelect::assignPlayers(int playerCount)
+{
 	for (int i = 0; i < playerCount; i++)
 	{
-
+		UE_LOG(LogTemp, Warning, TEXT("Player"));
 	}
 }

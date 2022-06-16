@@ -15,19 +15,13 @@ struct FPlayers
 {
 	GENERATED_BODY()
 	UPROPERTY(EditAnywhere, BlueprintReadwrite)
-	FName playerName;
+	FString playerName;
 	UPROPERTY(EditAnywhere, BlueprintReadwrite)
 	int32 score;
 
 	FPlayers()
 	{
 
-	}
-
-	FPlayers(FName name, int32 inScore)
-	{
-		playerName = name;
-		score = inScore;
 	}
 };
 
@@ -63,6 +57,30 @@ protected:
 	UPROPERTY(meta = (BindWidget))
 		class UTextBlock* sixPlayerText;
 	UPROPERTY(meta = (BindWidget))
+		class UButton* sevenPlayerButton;
+	UPROPERTY(meta = (BindWidget))
+		class UButton* eightPlayerButton;
+	UPROPERTY(meta = (BindWidget))
+		class UButton* ninePlayerButton;
+	UPROPERTY(meta = (BindWidget))
+		class UButton* tenPlayerButton;
+	UPROPERTY(meta = (BindWidget))
+		class UButton* elevenPlayerButton;
+	UPROPERTY(meta = (BindWidget))
+		class UButton* twelvePlayerButton;
+	UPROPERTY(meta = (BindWidget))
+		class UTextBlock* sevenPlayerText;
+	UPROPERTY(meta = (BindWidget))
+		class UTextBlock* eightPlayerText;
+	UPROPERTY(meta = (BindWidget))
+		class UTextBlock* ninePlayerText;
+	UPROPERTY(meta = (BindWidget))
+		class UTextBlock* tenPlayerText;
+	UPROPERTY(meta = (BindWidget))
+		class UTextBlock* elevenPlayerText;
+	UPROPERTY(meta = (BindWidget))
+		class UTextBlock* twelvePlayerText;
+	UPROPERTY(meta = (BindWidget))
 		class UEditableTextBox* inputText;
 	UFUNCTION()
 		void onePlayerClicked();
@@ -77,6 +95,18 @@ protected:
 	UFUNCTION()
 		void sixPlayerClicked();
 	UFUNCTION()
+		void sevenPlayerClicked();
+	UFUNCTION()
+		void eightPlayerClicked();
+	UFUNCTION()
+		void ninePlayerClicked();
+	UFUNCTION()
+		void tenPlayerClicked();
+	UFUNCTION()
+		void elevenPlayerClicked();
+	UFUNCTION()
+		void twelvePlayerClicked();
+	UFUNCTION()
 		void assignPlayers(int playerCount);
 	//UFUNCTION()
 	//	void onTextInput();
@@ -85,6 +115,6 @@ protected:
 
 private:
 	FPlayers player;
-	FPlayers players[1];
+	FPlayers players[11];
 	FString checkthis;
 };

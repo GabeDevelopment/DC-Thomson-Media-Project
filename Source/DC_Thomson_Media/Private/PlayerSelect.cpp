@@ -8,7 +8,6 @@
 void UPlayerSelect::NativeConstruct()
 {
 	Super::NativeConstruct();
-	UE_LOG(LogTemp, Warning, TEXT("Player"));
 	inputText->SetIsEnabled(false);
 
 	onePlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::onePlayerClicked);
@@ -17,6 +16,12 @@ void UPlayerSelect::NativeConstruct()
 	fourPlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::fourPlayerClicked);
 	fivePlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::fivePlayerClicked);
 	sixPlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::sixPlayerClicked);
+	sevenPlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::sevenPlayerClicked);
+	eightPlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::eightPlayerClicked);
+	ninePlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::ninePlayerClicked);
+	tenPlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::tenPlayerClicked);
+	elevenPlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::elevenPlayerClicked);
+	twelvePlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::twelvePlayerClicked);
 
 	title->SetText(FText::FromString("Player Select"));
 	onePlayerText->SetText(FText::FromString("1"));
@@ -25,6 +30,12 @@ void UPlayerSelect::NativeConstruct()
 	fourPlayerText->SetText(FText::FromString("4"));
 	fivePlayerText->SetText(FText::FromString("5"));
 	sixPlayerText->SetText(FText::FromString("6"));
+	sevenPlayerText->SetText(FText::FromString("7"));
+	eightPlayerText->SetText(FText::FromString("8"));
+	ninePlayerText->SetText(FText::FromString("9"));
+	tenPlayerText->SetText(FText::FromString("10"));
+	elevenPlayerText->SetText(FText::FromString("11"));
+	twelvePlayerText->SetText(FText::FromString("12"));
 }
 
 void UPlayerSelect::onePlayerClicked()
@@ -64,40 +75,122 @@ void UPlayerSelect::sixPlayerClicked()
 	assignPlayers(playerCount);
 }
 
+void UPlayerSelect::sevenPlayerClicked()
+{
+	int playerCount = 7;
+	assignPlayers(playerCount);
+}
+
+void UPlayerSelect::eightPlayerClicked()
+{
+	int playerCount = 8;
+	assignPlayers(playerCount);
+}
+
+void UPlayerSelect::ninePlayerClicked()
+{
+	int playerCount = 9;
+	assignPlayers(playerCount);
+}
+
+void UPlayerSelect::tenPlayerClicked()
+{
+	int playerCount = 10;
+	assignPlayers(playerCount);
+}
+
+void UPlayerSelect::elevenPlayerClicked()
+{
+	int playerCount = 11;
+	assignPlayers(playerCount);
+}
+
+void UPlayerSelect::twelvePlayerClicked()
+{
+	int playerCount = 12;
+	assignPlayers(playerCount);
+}
+
 void UPlayerSelect::assignPlayers(int playerCount)
 {
 
 	inputText->SetIsEnabled(true);
-	for (int i = 0; i < playerCount; i++)
+	for (int32 i = 0; i < playerCount; i++)
 	{
-		player.playerName = "Player1";
-		player.score = 0;
-		players[i] = player;
-		//FPlayers player;
-		//player.playerName = "Player1";
-		//player.score = 0;
-		//players.Add(player);
-		//players.Find(player);
+		players[i].playerName = "Player ";
+		players[i].playerName.AppendInt(i);
+		players[i].score = 0;
 	}
 	switch (playerCount)
 	{
 	case 1:
-		UE_LOG(LogTemp, Warning, TEXT("%s"), *players[0].playerName.ToString());
+		UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[0].playerName, players[0].score);
 		break;
 	case 2:
-		UE_LOG(LogTemp, Warning, TEXT("Two Players"));
+		for (int32 i = 0; i < playerCount; i++)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+		}
 		break;
 	case 3:
-		UE_LOG(LogTemp, Warning, TEXT("Three Players"));
+		for (int32 i = 0; i < playerCount; i++)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+		}
 		break;
 	case 4:
-		UE_LOG(LogTemp, Warning, TEXT("Four Players"));
+		for (int32 i = 0; i < playerCount; i++)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+		}
 		break;
 	case 5:
-		UE_LOG(LogTemp, Warning, TEXT("Five Players"));
+		for (int32 i = 0; i < playerCount; i++)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+		}
 		break;
 	case 6:
-		UE_LOG(LogTemp, Warning, TEXT("Six Players"));
+		for (int32 i = 0; i < playerCount; i++)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+		}
+		break;
+	case 7:
+		for (int32 i = 0; i < playerCount; i++)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+		}
+		break;
+	case 8:
+		for (int32 i = 0; i < playerCount; i++)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+		}
+		break;
+	case 9:
+		for (int32 i = 0; i < playerCount; i++)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+		}
+		break;
+	case 10:
+		for (int32 i = 0; i < playerCount; i++)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+		}
+		break;
+	case 11:
+		for (int32 i = 0; i < playerCount; i++)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+		}
+		break;
+	case 12:
+		for (int32 i = 0; i < playerCount; i++)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+		}
 		break;
 	}
 }

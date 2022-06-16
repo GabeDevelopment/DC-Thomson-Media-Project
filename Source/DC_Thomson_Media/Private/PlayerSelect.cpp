@@ -9,6 +9,7 @@
 void UPlayerSelect::NativeConstruct()
 {
 	Super::NativeConstruct();
+	inputText->OnTextCommitted.AddUniqueDynamic(this, &UPlayerSelect::onTextInput);
 	inputText->SetIsEnabled(false);
 	inputText->SetVisibility(ESlateVisibility::Collapsed);
 
@@ -45,10 +46,7 @@ void UPlayerSelect::onePlayerClicked()
 {
 	int playerCount = 1;
 	clearPlayerCountButtons();
-	inputText->SetIsEnabled(true);
-	inputText->SetVisibility(ESlateVisibility::Visible);
-	inputText->OnTextCommitted.AddUniqueDynamic(this, &UPlayerSelect::onTextInput);
-	//assignPlayers(playerCount);
+	assignPlayers(playerCount);
 }
 
 void UPlayerSelect::twoPlayerClicked()
@@ -130,13 +128,12 @@ void UPlayerSelect::twelvePlayerClicked()
 
 void UPlayerSelect::assignPlayers(int playerCount)
 {
-
 	inputText->SetIsEnabled(true);
 	inputText->SetVisibility(ESlateVisibility::Visible);
 	for (int32 i = 0; i < playerCount; i++)
 	{
+		inputText->OnTextCommitted.AddUniqueDynamic(this, &UPlayerSelect::onTextInput);
 		players[i].playerName = checkthis;
-		players[i].playerName.AppendInt(i);
 		players[i].score = 0;
 	}
 	switch (playerCount)
@@ -234,8 +231,5 @@ void UPlayerSelect::onTextInput(const FText& inText, ETextCommit::Type commitInf
 	if (commitInfo == ETextCommit::OnEnter)
 	{
 		checkthis = inText.ToString();
-		players[0].playerName = checkthis;
-		players[0].score = 0;
-		UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[0].playerName, players[0].score);
 	}
 }

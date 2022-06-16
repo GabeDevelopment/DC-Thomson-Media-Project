@@ -116,7 +116,6 @@ protected:
 	void NativeConstruct() override;
 
 private:
-	FPlayers player;
 	FPlayers players[11];
 	FString checkthis;
 };

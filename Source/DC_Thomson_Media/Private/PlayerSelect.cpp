@@ -5,10 +5,13 @@
 #include <Components/Button.h>
 #include <Components/TextBlock.h>
 #include <Components/EditableTextBox.h>
+#include <Types/SlateEnums.h>
 void UPlayerSelect::NativeConstruct()
 {
 	Super::NativeConstruct();
 	inputText->SetIsEnabled(false);
+	inputText->SetVisibility(ESlateVisibility::Collapsed);
+
 
 	onePlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::onePlayerClicked);
 	twoPlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::twoPlayerClicked);
@@ -127,6 +130,8 @@ void UPlayerSelect::assignPlayers(int playerCount)
 {
 
 	inputText->SetIsEnabled(true);
+	inputText->SetVisibility(ESlateVisibility::Visible);
+	/*inputText->OnTextCommitted(this, &UPlayerSelect::onTextInput);*/
 	for (int32 i = 0; i < playerCount; i++)
 	{
 		players[i].playerName = "Player ";
@@ -223,7 +228,7 @@ void UPlayerSelect::clearPlayerCountButtons()
 	twelvePlayerButton->SetVisibility(ESlateVisibility::Collapsed);
 }
 
-//void UPlayerSelect::onTextInput()
-//{
-//
-//}
+void UPlayerSelect::onTextInput(const FText& inText, ETextCommit::Type commitInfo)
+{
+
+}

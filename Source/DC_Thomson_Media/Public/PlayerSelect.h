@@ -110,8 +110,8 @@ protected:
 		void assignPlayers(int playerCount);
 	UFUNCTION()
 		void clearPlayerCountButtons();
-	//UFUNCTION()
-	//	void onTextInput();
+	UFUNCTION()
+		void onTextInput(const FText& inText, ETextCommit::Type commitInfo);
 
 	void NativeConstruct() override;
 

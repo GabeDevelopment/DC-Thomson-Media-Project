@@ -5,11 +5,11 @@
 #include <Components/Button.h>
 #include <Components/TextBlock.h>
 #include <Components/EditableTextBox.h>
-#include <iostream>
 void UPlayerSelect::NativeConstruct()
 {
 	Super::NativeConstruct();
 	UE_LOG(LogTemp, Warning, TEXT("Player"));
+	inputText->SetIsEnabled(false);
 
 	onePlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::onePlayerClicked);
 	twoPlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::twoPlayerClicked);
@@ -31,6 +31,7 @@ void UPlayerSelect::onePlayerClicked()
 {
 	int playerCount = 1;
 	assignPlayers(playerCount);
+	//inputText->OnTextCommitted.AddUnique(this, &UPlayerSelect::onTextInput);
 }
 
 void UPlayerSelect::twoPlayerClicked()
@@ -65,14 +66,16 @@ void UPlayerSelect::sixPlayerClicked()
 
 void UPlayerSelect::assignPlayers(int playerCount)
 {
+	inputText->SetIsEnabled(true);
 	for (int i = 0; i < playerCount; i++)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Player %i"), i);
+		FPlayers player(FName(TEXT("Player1")), 0);
+		players.Add(player);
 	}
 	switch (playerCount)
 	{
 	case 1:
-		UE_LOG(LogTemp, Warning, TEXT("One Player"));
+		//UE_LOG(LogTemp, Warning, TEXT("%players"), players);
 		break;
 	case 2:
 		UE_LOG(LogTemp, Warning, TEXT("Two Players"));
@@ -91,3 +94,8 @@ void UPlayerSelect::assignPlayers(int playerCount)
 		break;
 	}
 }
+
+//void UPlayerSelect::onTextInput()
+//{
+//
+//}

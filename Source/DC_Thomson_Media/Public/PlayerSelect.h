@@ -9,6 +9,28 @@
 /**
  *
  */
+
+USTRUCT(BlueprintType)
+struct FPlayers
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadwrite)
+	FName playerName;
+	UPROPERTY(EditAnywhere, BlueprintReadwrite)
+	int32 score;
+
+	FPlayers()
+	{
+
+	}
+
+	FPlayers(FName name, int32 inScore)
+	{
+		playerName = name;
+		score = inScore;
+	}
+};
+
 UCLASS()
 class DC_THOMSON_MEDIA_API UPlayerSelect : public UUserWidget
 {
@@ -56,6 +78,11 @@ protected:
 		void sixPlayerClicked();
 	UFUNCTION()
 		void assignPlayers(int playerCount);
+	//UFUNCTION()
+	//	void onTextInput();
 
 	void NativeConstruct() override;
+
+private:
+	TArray<FPlayers> players;
 };

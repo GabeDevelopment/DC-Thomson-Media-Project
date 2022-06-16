@@ -41,6 +41,7 @@ void UPlayerSelect::NativeConstruct()
 void UPlayerSelect::onePlayerClicked()
 {
 	int playerCount = 1;
+	clearPlayerCountButtons();
 	assignPlayers(playerCount);
 	//inputText->OnTextCommitted.AddUnique(this, &UPlayerSelect::onTextInput);
 }
@@ -48,66 +49,77 @@ void UPlayerSelect::onePlayerClicked()
 void UPlayerSelect::twoPlayerClicked()
 {
 	int playerCount = 2;
+	clearPlayerCountButtons();
 	assignPlayers(playerCount);
 }
 
 void UPlayerSelect::threePlayerClicked()
 {
 	int playerCount = 3;
+	clearPlayerCountButtons();
 	assignPlayers(playerCount);
 }
 
 void UPlayerSelect::fourPlayerClicked()
 {
 	int playerCount = 4;
+	clearPlayerCountButtons();
 	assignPlayers(playerCount);
 }
 
 void UPlayerSelect::fivePlayerClicked()
 {
 	int playerCount = 5;
+	clearPlayerCountButtons();
 	assignPlayers(playerCount);
 }
 
 void UPlayerSelect::sixPlayerClicked()
 {
 	int playerCount = 6;
+	clearPlayerCountButtons();
 	assignPlayers(playerCount);
 }
 
 void UPlayerSelect::sevenPlayerClicked()
 {
 	int playerCount = 7;
+	clearPlayerCountButtons();
 	assignPlayers(playerCount);
 }
 
 void UPlayerSelect::eightPlayerClicked()
 {
 	int playerCount = 8;
+	clearPlayerCountButtons();
 	assignPlayers(playerCount);
 }
 
 void UPlayerSelect::ninePlayerClicked()
 {
 	int playerCount = 9;
+	clearPlayerCountButtons();
 	assignPlayers(playerCount);
 }
 
 void UPlayerSelect::tenPlayerClicked()
 {
 	int playerCount = 10;
+	clearPlayerCountButtons();
 	assignPlayers(playerCount);
 }
 
 void UPlayerSelect::elevenPlayerClicked()
 {
 	int playerCount = 11;
+	clearPlayerCountButtons();
 	assignPlayers(playerCount);
 }
 
 void UPlayerSelect::twelvePlayerClicked()
 {
 	int playerCount = 12;
+	clearPlayerCountButtons();
 	assignPlayers(playerCount);
 }
 
@@ -193,6 +205,22 @@ void UPlayerSelect::assignPlayers(int playerCount)
 		}
 		break;
 	}
+}
+
+void UPlayerSelect::clearPlayerCountButtons()
+{
+	onePlayerButton->SetVisibility(ESlateVisibility::Collapsed);
+	twoPlayerButton->SetVisibility(ESlateVisibility::Collapsed);
+	threePlayerButton->SetVisibility(ESlateVisibility::Collapsed);
+	fourPlayerButton->SetVisibility(ESlateVisibility::Collapsed);
+	fivePlayerButton->SetVisibility(ESlateVisibility::Collapsed);
+	sixPlayerButton->SetVisibility(ESlateVisibility::Collapsed);
+	sevenPlayerButton->SetVisibility(ESlateVisibility::Collapsed);
+	eightPlayerButton->SetVisibility(ESlateVisibility::Collapsed);
+	ninePlayerButton->SetVisibility(ESlateVisibility::Collapsed);
+	tenPlayerButton->SetVisibility(ESlateVisibility::Collapsed);
+	elevenPlayerButton->SetVisibility(ESlateVisibility::Collapsed);
+	twelvePlayerButton->SetVisibility(ESlateVisibility::Collapsed);
 }
 
 //void UPlayerSelect::onTextInput()

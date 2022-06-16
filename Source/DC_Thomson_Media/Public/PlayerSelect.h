@@ -108,6 +108,8 @@ protected:
 		void twelvePlayerClicked();
 	UFUNCTION()
 		void assignPlayers(int playerCount);
+	UFUNCTION()
+		void clearPlayerCountButtons();
 	//UFUNCTION()
 	//	void onTextInput();
 

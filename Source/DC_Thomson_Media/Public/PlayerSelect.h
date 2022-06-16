@@ -84,5 +84,7 @@ protected:
 	void NativeConstruct() override;
 
 private:
-	TArray<FPlayers> players;
+	FPlayers player;
+	FPlayers players[1];
+	FString checkthis;
 };

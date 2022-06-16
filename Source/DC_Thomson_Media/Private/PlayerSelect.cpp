@@ -66,16 +66,23 @@ void UPlayerSelect::sixPlayerClicked()
 
 void UPlayerSelect::assignPlayers(int playerCount)
 {
+
 	inputText->SetIsEnabled(true);
 	for (int i = 0; i < playerCount; i++)
 	{
-		FPlayers player(FName(TEXT("Player1")), 0);
-		players.Add(player);
+		player.playerName = "Player1";
+		player.score = 0;
+		players[i] = player;
+		//FPlayers player;
+		//player.playerName = "Player1";
+		//player.score = 0;
+		//players.Add(player);
+		//players.Find(player);
 	}
 	switch (playerCount)
 	{
 	case 1:
-		//UE_LOG(LogTemp, Warning, TEXT("%players"), players);
+		UE_LOG(LogTemp, Warning, TEXT("%s"), *players[0].playerName.ToString());
 		break;
 	case 2:
 		UE_LOG(LogTemp, Warning, TEXT("Two Players"));

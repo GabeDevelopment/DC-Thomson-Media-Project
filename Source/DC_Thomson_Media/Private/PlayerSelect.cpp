@@ -5,6 +5,7 @@
 #include <Components/Button.h>
 #include <Components/TextBlock.h>
 #include <Components/EditableTextBox.h>
+#include "Kismet/GameplayStatics.h"
 #include <Types/SlateEnums.h>
 void UPlayerSelect::NativeConstruct()
 {
@@ -46,8 +47,7 @@ void UPlayerSelect::onePlayerClicked()
 	currentPlayers = 0;
 	playerCount = 1;
 	clearPlayerCountButtons();
-	inputText->SetIsEnabled(true);
-	inputText->SetVisibility(ESlateVisibility::Visible);
+
 }
 
 void UPlayerSelect::twoPlayerClicked()
@@ -55,7 +55,6 @@ void UPlayerSelect::twoPlayerClicked()
 	currentPlayers = 0;
 	playerCount = 2;
 	clearPlayerCountButtons();
-	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::threePlayerClicked()
@@ -63,7 +62,6 @@ void UPlayerSelect::threePlayerClicked()
 	currentPlayers = 0;
 	playerCount = 3;
 	clearPlayerCountButtons();
-	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::fourPlayerClicked()
@@ -71,7 +69,6 @@ void UPlayerSelect::fourPlayerClicked()
 	currentPlayers = 0;
 	playerCount = 4;
 	clearPlayerCountButtons();
-	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::fivePlayerClicked()
@@ -79,7 +76,6 @@ void UPlayerSelect::fivePlayerClicked()
 	currentPlayers = 0;
 	playerCount = 5;
 	clearPlayerCountButtons();
-	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::sixPlayerClicked()
@@ -87,7 +83,6 @@ void UPlayerSelect::sixPlayerClicked()
 	currentPlayers = 0;
 	playerCount = 6;
 	clearPlayerCountButtons();
-	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::sevenPlayerClicked()
@@ -95,7 +90,6 @@ void UPlayerSelect::sevenPlayerClicked()
 	currentPlayers = 0;
 	playerCount = 7;
 	clearPlayerCountButtons();
-	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::eightPlayerClicked()
@@ -103,7 +97,6 @@ void UPlayerSelect::eightPlayerClicked()
 	currentPlayers = 0;
 	playerCount = 8;
 	clearPlayerCountButtons();
-	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::ninePlayerClicked()
@@ -111,7 +104,6 @@ void UPlayerSelect::ninePlayerClicked()
 	currentPlayers = 0;
 	playerCount = 9;
 	clearPlayerCountButtons();
-	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::tenPlayerClicked()
@@ -119,7 +111,6 @@ void UPlayerSelect::tenPlayerClicked()
 	currentPlayers = 0;
 	playerCount = 10;
 	clearPlayerCountButtons();
-	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::elevenPlayerClicked()
@@ -127,7 +118,6 @@ void UPlayerSelect::elevenPlayerClicked()
 	currentPlayers = 0;
 	playerCount = 11;
 	clearPlayerCountButtons();
-	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::twelvePlayerClicked()
@@ -135,94 +125,8 @@ void UPlayerSelect::twelvePlayerClicked()
 	currentPlayers = 0;
 	playerCount = 12;
 	clearPlayerCountButtons();
-	inputText->SetIsEnabled(true);
-	inputText->SetVisibility(ESlateVisibility::Visible);
-	//assignPlayers(playerCount);
 }
 
-//void UPlayerSelect::assignPlayers(int playerCount)
-//{
-//	inputText->SetIsEnabled(true);
-//	inputText->SetVisibility(ESlateVisibility::Visible);
-//	for (int32 i = 0; i < playerCount; i++)
-//	{
-//		inputText->OnTextCommitted.AddUniqueDynamic(this, &UPlayerSelect::onTextInput);
-//		players[i].playerName = checkthis;
-//		players[i].score = 0;
-//	}
-//	switch (playerCount)
-//	{
-//	case 1:
-//		UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[0].playerName, players[0].score);
-//		break;
-//	case 2:
-//		for (int32 i = 0; i < playerCount; i++)
-//		{
-//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-//		}
-//		break;
-//	case 3:
-//		for (int32 i = 0; i < playerCount; i++)
-//		{
-//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-//		}
-//		break;
-//	case 4:
-//		for (int32 i = 0; i < playerCount; i++)
-//		{
-//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-//		}
-//		break;
-//	case 5:
-//		for (int32 i = 0; i < playerCount; i++)
-//		{
-//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-//		}
-//		break;
-//	case 6:
-//		for (int32 i = 0; i < playerCount; i++)
-//		{
-//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-//		}
-//		break;
-//	case 7:
-//		for (int32 i = 0; i < playerCount; i++)
-//		{
-//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-//		}
-//		break;
-//	case 8:
-//		for (int32 i = 0; i < playerCount; i++)
-//		{
-//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-//		}
-//		break;
-//	case 9:
-//		for (int32 i = 0; i < playerCount; i++)
-//		{
-//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-//		}
-//		break;
-//	case 10:
-//		for (int32 i = 0; i < playerCount; i++)
-//		{
-//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-//		}
-//		break;
-//	case 11:
-//		for (int32 i = 0; i < playerCount; i++)
-//		{
-//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-//		}
-//		break;
-//	case 12:
-//		for (int32 i = 0; i < playerCount; i++)
-//		{
-//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-//		}
-//		break;
-//	}
-//}
 
 void UPlayerSelect::clearPlayerCountButtons()
 {
@@ -238,6 +142,8 @@ void UPlayerSelect::clearPlayerCountButtons()
 	tenPlayerButton->SetVisibility(ESlateVisibility::Collapsed);
 	elevenPlayerButton->SetVisibility(ESlateVisibility::Collapsed);
 	twelvePlayerButton->SetVisibility(ESlateVisibility::Collapsed);
+	inputText->SetIsEnabled(true);
+	inputText->SetVisibility(ESlateVisibility::Visible);
 }
 
 void UPlayerSelect::onTextInput(const FText& inText, ETextCommit::Type commitInfo)
@@ -253,9 +159,6 @@ void UPlayerSelect::onTextInput(const FText& inText, ETextCommit::Type commitInf
 	}
 	if (currentPlayers == playerCount && commitInfo == ETextCommit::OnEnter)
 	{
-		for (int32 i = 0; i < playerCount; i++)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Player %d: Name: %s Score: %d"), i + 1, *players[i].playerName, players[i].score);
-		}
+		UGameplayStatics::OpenLevel(GetWorld(), "FreePlay");
 	}
 }

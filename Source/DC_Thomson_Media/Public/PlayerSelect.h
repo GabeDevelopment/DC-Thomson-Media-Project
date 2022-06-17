@@ -106,8 +106,8 @@ protected:
 		void elevenPlayerClicked();
 	UFUNCTION()
 		void twelvePlayerClicked();
-	UFUNCTION()
-		void assignPlayers(int playerCount);
+	//UFUNCTION()
+	//	void assignPlayers(int playerCount);
 	UFUNCTION()
 		void clearPlayerCountButtons();
 	UFUNCTION()
@@ -116,6 +116,8 @@ protected:
 	void NativeConstruct() override;
 
 private:
-	FPlayers players[11];
+	FPlayers players[12];
 	FString checkthis;
+	int32 playerCount;
+	int32 currentPlayers;
 };

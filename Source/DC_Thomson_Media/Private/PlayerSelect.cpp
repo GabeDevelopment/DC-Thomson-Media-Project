@@ -13,7 +13,6 @@ void UPlayerSelect::NativeConstruct()
 	inputText->SetIsEnabled(false);
 	inputText->SetVisibility(ESlateVisibility::Collapsed);
 
-
 	onePlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::onePlayerClicked);
 	twoPlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::twoPlayerClicked);
 	threePlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::threePlayerClicked);
@@ -44,171 +43,186 @@ void UPlayerSelect::NativeConstruct()
 
 void UPlayerSelect::onePlayerClicked()
 {
-	int playerCount = 1;
+	currentPlayers = 0;
+	playerCount = 1;
 	clearPlayerCountButtons();
-	assignPlayers(playerCount);
+	inputText->SetIsEnabled(true);
+	inputText->SetVisibility(ESlateVisibility::Visible);
 }
 
 void UPlayerSelect::twoPlayerClicked()
 {
-	int playerCount = 2;
+	currentPlayers = 0;
+	playerCount = 2;
 	clearPlayerCountButtons();
-	assignPlayers(playerCount);
+	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::threePlayerClicked()
 {
-	int playerCount = 3;
+	currentPlayers = 0;
+	playerCount = 3;
 	clearPlayerCountButtons();
-	assignPlayers(playerCount);
+	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::fourPlayerClicked()
 {
-	int playerCount = 4;
+	currentPlayers = 0;
+	playerCount = 4;
 	clearPlayerCountButtons();
-	assignPlayers(playerCount);
+	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::fivePlayerClicked()
 {
-	int playerCount = 5;
+	currentPlayers = 0;
+	playerCount = 5;
 	clearPlayerCountButtons();
-	assignPlayers(playerCount);
+	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::sixPlayerClicked()
 {
-	int playerCount = 6;
+	currentPlayers = 0;
+	playerCount = 6;
 	clearPlayerCountButtons();
-	assignPlayers(playerCount);
+	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::sevenPlayerClicked()
 {
-	int playerCount = 7;
+	currentPlayers = 0;
+	playerCount = 7;
 	clearPlayerCountButtons();
-	assignPlayers(playerCount);
+	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::eightPlayerClicked()
 {
-	int playerCount = 8;
+	currentPlayers = 0;
+	playerCount = 8;
 	clearPlayerCountButtons();
-	assignPlayers(playerCount);
+	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::ninePlayerClicked()
 {
-	int playerCount = 9;
+	currentPlayers = 0;
+	playerCount = 9;
 	clearPlayerCountButtons();
-	assignPlayers(playerCount);
+	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::tenPlayerClicked()
 {
-	int playerCount = 10;
+	currentPlayers = 0;
+	playerCount = 10;
 	clearPlayerCountButtons();
-	assignPlayers(playerCount);
+	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::elevenPlayerClicked()
 {
-	int playerCount = 11;
+	currentPlayers = 0;
+	playerCount = 11;
 	clearPlayerCountButtons();
-	assignPlayers(playerCount);
+	//assignPlayers(playerCount);
 }
 
 void UPlayerSelect::twelvePlayerClicked()
 {
-	int playerCount = 12;
+	currentPlayers = 0;
+	playerCount = 12;
 	clearPlayerCountButtons();
-	assignPlayers(playerCount);
-}
-
-void UPlayerSelect::assignPlayers(int playerCount)
-{
 	inputText->SetIsEnabled(true);
 	inputText->SetVisibility(ESlateVisibility::Visible);
-	for (int32 i = 0; i < playerCount; i++)
-	{
-		inputText->OnTextCommitted.AddUniqueDynamic(this, &UPlayerSelect::onTextInput);
-		players[i].playerName = checkthis;
-		players[i].score = 0;
-	}
-	switch (playerCount)
-	{
-	case 1:
-		UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[0].playerName, players[0].score);
-		break;
-	case 2:
-		for (int32 i = 0; i < playerCount; i++)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-		}
-		break;
-	case 3:
-		for (int32 i = 0; i < playerCount; i++)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-		}
-		break;
-	case 4:
-		for (int32 i = 0; i < playerCount; i++)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-		}
-		break;
-	case 5:
-		for (int32 i = 0; i < playerCount; i++)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-		}
-		break;
-	case 6:
-		for (int32 i = 0; i < playerCount; i++)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-		}
-		break;
-	case 7:
-		for (int32 i = 0; i < playerCount; i++)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-		}
-		break;
-	case 8:
-		for (int32 i = 0; i < playerCount; i++)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-		}
-		break;
-	case 9:
-		for (int32 i = 0; i < playerCount; i++)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-		}
-		break;
-	case 10:
-		for (int32 i = 0; i < playerCount; i++)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-		}
-		break;
-	case 11:
-		for (int32 i = 0; i < playerCount; i++)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-		}
-		break;
-	case 12:
-		for (int32 i = 0; i < playerCount; i++)
-		{
-			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
-		}
-		break;
-	}
+	//assignPlayers(playerCount);
 }
+
+//void UPlayerSelect::assignPlayers(int playerCount)
+//{
+//	inputText->SetIsEnabled(true);
+//	inputText->SetVisibility(ESlateVisibility::Visible);
+//	for (int32 i = 0; i < playerCount; i++)
+//	{
+//		inputText->OnTextCommitted.AddUniqueDynamic(this, &UPlayerSelect::onTextInput);
+//		players[i].playerName = checkthis;
+//		players[i].score = 0;
+//	}
+//	switch (playerCount)
+//	{
+//	case 1:
+//		UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[0].playerName, players[0].score);
+//		break;
+//	case 2:
+//		for (int32 i = 0; i < playerCount; i++)
+//		{
+//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+//		}
+//		break;
+//	case 3:
+//		for (int32 i = 0; i < playerCount; i++)
+//		{
+//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+//		}
+//		break;
+//	case 4:
+//		for (int32 i = 0; i < playerCount; i++)
+//		{
+//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+//		}
+//		break;
+//	case 5:
+//		for (int32 i = 0; i < playerCount; i++)
+//		{
+//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+//		}
+//		break;
+//	case 6:
+//		for (int32 i = 0; i < playerCount; i++)
+//		{
+//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+//		}
+//		break;
+//	case 7:
+//		for (int32 i = 0; i < playerCount; i++)
+//		{
+//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+//		}
+//		break;
+//	case 8:
+//		for (int32 i = 0; i < playerCount; i++)
+//		{
+//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+//		}
+//		break;
+//	case 9:
+//		for (int32 i = 0; i < playerCount; i++)
+//		{
+//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+//		}
+//		break;
+//	case 10:
+//		for (int32 i = 0; i < playerCount; i++)
+//		{
+//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+//		}
+//		break;
+//	case 11:
+//		for (int32 i = 0; i < playerCount; i++)
+//		{
+//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+//		}
+//		break;
+//	case 12:
+//		for (int32 i = 0; i < playerCount; i++)
+//		{
+//			UE_LOG(LogTemp, Warning, TEXT("%s Score: %d"), *players[i].playerName, players[i].score);
+//		}
+//		break;
+//	}
+//}
 
 void UPlayerSelect::clearPlayerCountButtons()
 {
@@ -228,8 +242,20 @@ void UPlayerSelect::clearPlayerCountButtons()
 
 void UPlayerSelect::onTextInput(const FText& inText, ETextCommit::Type commitInfo)
 {
-	if (commitInfo == ETextCommit::OnEnter)
+	if (currentPlayers < playerCount)
 	{
-		checkthis = inText.ToString();
+		if (commitInfo == ETextCommit::OnEnter)
+		{
+			players[currentPlayers].playerName = inText.ToString();
+			players[currentPlayers].score = 0;
+			currentPlayers++;
+		}
+	}
+	if (currentPlayers == playerCount && commitInfo == ETextCommit::OnEnter)
+	{
+		for (int32 i = 0; i < playerCount; i++)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Player %d: Name: %s Score: %d"), i + 1, *players[i].playerName, players[i].score);
+		}
 	}
 }

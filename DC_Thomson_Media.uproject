@@ -17,6 +17,10 @@
 		{
 			"Name": "Kythera",
 			"Enabled": false
+		},
+		{
+			"Name": "OptionalMobileFeaturesBPLibrary",
+			"Enabled": true
 		}
 	]
 }

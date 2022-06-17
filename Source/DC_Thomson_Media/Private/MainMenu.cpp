@@ -22,7 +22,7 @@ void UMainMenu::NativeConstruct()
 
 void UMainMenu::OnStartClicked()
 {
-	UGameplayStatics::OpenLevel(GetWorld(), "RedLightMap");
+	UGameplayStatics::OpenLevel(GetWorld(), "PlayerSelect");
 }
 
 void UMainMenu::OnFreePlayClicked()

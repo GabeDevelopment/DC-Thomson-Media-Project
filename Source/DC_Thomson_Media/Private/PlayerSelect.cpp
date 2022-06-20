@@ -14,6 +14,7 @@ void UPlayerSelect::NativeConstruct()
 	inputText->OnTextCommitted.AddUniqueDynamic(this, &UPlayerSelect::onTextInput);
 	inputText->SetIsEnabled(false);
 	inputText->SetVisibility(ESlateVisibility::Collapsed);
+	playerText->SetVisibility(ESlateVisibility::Collapsed);
 
 	onePlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::onePlayerClicked);
 	twoPlayerButton->OnClicked.AddUniqueDynamic(this, &UPlayerSelect::twoPlayerClicked);
@@ -145,6 +146,8 @@ void UPlayerSelect::clearPlayerCountButtons()
 	twelvePlayerButton->SetVisibility(ESlateVisibility::Collapsed);
 	inputText->SetIsEnabled(true);
 	inputText->SetVisibility(ESlateVisibility::Visible);
+	playerText->SetVisibility(ESlateVisibility::Visible);
+	playerText->SetText(FText::FromString("Player 1 Enter Name:"));
 }
 
 void UPlayerSelect::onTextInput(const FText& inText, ETextCommit::Type commitInfo)
@@ -156,7 +159,9 @@ void UPlayerSelect::onTextInput(const FText& inText, ETextCommit::Type commitInf
 			players[currentPlayers].playerName = inText.ToString();
 			players[currentPlayers].score = 0;
 			currentPlayers++;
+			FString playerTextCount = ("Player " + FString::FromInt(currentPlayers + 1));
 			inputText->SetText(FText::FromString(""));
+			playerText->SetText(FText::FromString(playerTextCount + " Enter Name:"));
 		}
 	}
 	if (currentPlayers == playerCount && commitInfo == ETextCommit::OnUserMovedFocus)

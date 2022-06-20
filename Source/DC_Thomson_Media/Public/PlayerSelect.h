@@ -82,6 +82,8 @@ protected:
 		class UTextBlock* twelvePlayerText;
 	UPROPERTY(meta = (BindWidget))
 		class UEditableTextBox* inputText;
+	UPROPERTY(meta = (BindWidget))
+		class UTextBlock* playerText;
 	UFUNCTION()
 		void onePlayerClicked();
 	UFUNCTION()

@@ -151,14 +151,15 @@ void UPlayerSelect::onTextInput(const FText& inText, ETextCommit::Type commitInf
 {
 	if (currentPlayers < playerCount)
 	{
-		if (commitInfo == ETextCommit::OnEnter)
+		if (commitInfo == ETextCommit::OnUserMovedFocus)
 		{
 			players[currentPlayers].playerName = inText.ToString();
 			players[currentPlayers].score = 0;
 			currentPlayers++;
+			inputText->SetText(FText::FromString(""));
 		}
 	}
-	if (currentPlayers == playerCount && commitInfo == ETextCommit::OnEnter)
+	if (currentPlayers == playerCount && commitInfo == ETextCommit::OnUserMovedFocus)
 	{
 		UGameplayStatics::OpenLevel(GetWorld(), "FreePlay");
 	}

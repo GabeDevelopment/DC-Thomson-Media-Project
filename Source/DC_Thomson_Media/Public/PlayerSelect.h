@@ -14,10 +14,10 @@ USTRUCT(BlueprintType)
 struct FPlayers
 {
 	GENERATED_BODY()
+		UPROPERTY(EditAnywhere, BlueprintReadwrite)
+		FString playerName;
 	UPROPERTY(EditAnywhere, BlueprintReadwrite)
-	FString playerName;
-	UPROPERTY(EditAnywhere, BlueprintReadwrite)
-	int32 score;
+		int32 score;
 
 	FPlayers()
 	{
@@ -117,7 +117,6 @@ protected:
 
 private:
 	FPlayers players[12];
-	FString checkthis;
 	int32 playerCount;
 	int32 currentPlayers;
 };

@@ -5,8 +5,9 @@
 #include <Components/Button.h>
 #include <Components/TextBlock.h>
 #include <Components/EditableTextBox.h>
-#include "Kismet/GameplayStatics.h"
 #include <Types/SlateEnums.h>
+#include "Kismet/GameplayStatics.h"
+
 void UPlayerSelect::NativeConstruct()
 {
 	Super::NativeConstruct();
